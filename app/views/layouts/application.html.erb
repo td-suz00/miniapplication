@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <style type="text/css" href="style.css"></style>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.js"
+  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.3"></script>
+
+  <div class="background">
+    <nav class="#ce93d8 purple lighten-3">
+      <div class="nav-wrapper">
+
+          <% if user_signed_in? %>
+            <a href="/comments/:id" class="brand-logo">こめんとひろば</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%= current_user.nickname + "さんのページ" %></li>
+            <li><%= link_to 'コメントする', '/comments/new', method: :get, class: 'new_comment' %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'sign_out' %></li>
+
+          <% else %>
+            <a href="/" class="brand-logo">こめんとひろば</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%= link_to 'ログイン', new_user_session_path, method: :get, class: 'sign_in' %></li>
+            <li><%= link_to '新規登録', new_user_registration_path, method: :get, class: 'sign_up' %></li>
+
+          <% end %>
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <%= render 'layouts/flash' %>
+  <%= yield %>
+
+  <script type="text/jacascript" src="./app.js"></script>
+
+</body>
+</html>
+
+
+
+
+

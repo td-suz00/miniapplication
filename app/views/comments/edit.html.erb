@@ -1,0 +1,29 @@
+<% if @comment.errors.any? %>
+  <p>タイトル、テキストを入力してください</p>
+<% end %>
+
+<%= form_for(@comment) do |f| %>
+  <div class="comment_edit">
+    <h4>
+      コメントの編集
+    </h4>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, placeholder: "Title(required)" %>
+
+    <%= f.label :text, "Text" %>
+    <%= f.text_area :text, placeholder: "Text(required)" %>
+
+    <%= f.submit "Send" %>
+
+    <%# <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
+    <input type="submit" value="SENT"> %>
+  <% end %>
+</div>
+
+<%# = form_for group do |f|
+  - if group.errors.any?
+    .chat-group-form__errors
+      %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"
+      %ul
+        - group.errors.full_messages.each do |message|
+          %li= message %>

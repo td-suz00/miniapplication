@@ -1,0 +1,83 @@
+body{
+  background: url('sea_picture.jpg');
+
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+   
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+   
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+   
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+}
+
+.background{
+  /* 背景画像の透過用css */
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+}
+
+.container.row.cal{
+  margin: 0 auto;
+}
+
+.#ce93d8.purple.lighten-3{
+  position: fixed;
+  top: 0;
+}
+
+.col.s12.m6{
+  margin: 0 25%;
+}
+
+.new_comment_create{
+  background-color: white;
+}
+
+.card-action{
+  height: 50px;
+}
+
+.delete{
+  float: left;
+  width: 45%;
+  text-align: center;
+  margin: 0 0 0 0;
+}
+
+.edit{
+  float: right;
+  width: 45%;
+  text-align: center;
+  margin: 0 0 0 0;
+}
+
+.comment_edit{
+  background-color: white;
+}
+
+.twitter-share-button{
+  float: right;
+}
+
+/* .card-content.white-text-textarea{
+  width: 50%;
+  margin: 0;
+}
+
+.card-content.white-text-linkarea{
+  width: 50%;
+  margin: 0;
+} */
+
+.login{
+  background-color: white;
+}
+
+.sing_up{
+  background-color: white;
+}
+
